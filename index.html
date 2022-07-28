@@ -10,12 +10,57 @@
     <script>
       function getComputerChoice() {
         let options = ["Rock", "Paper", "Scissors"];
-        console.log(options);
+
         optionToUse = options[Math.floor(Math.random() * options.length)];
         return optionToUse;
       }
-      console.log(getComputerChoice());
-      function play(playerSelector, computerSelector) {}
+
+      function playRound(playerSelection, computerSelection) {
+        if (playerSelection === "Rock" && computerSelection === "Paper") {
+          console.log("You Lose! Paper beats Rock");
+        } else if (
+          playerSelection === "Rock" &&
+          computerSelection === "Scissors"
+        ) {
+          console.log("You Win! Rock beats Scissors");
+        } else if (playerSelection === "Rock" && computerSelection === "Rock") {
+          console.log("That's a tie!");
+        } else if (
+          playerSelection === "Paper" &&
+          computerSelection === "Rock"
+        ) {
+          console.log("You Win! Paper beats Rock");
+        } else if (
+          playerSelection === "Paper" &&
+          computerSelection === "Scissors"
+        ) {
+          console.log("You Lose! Scissors beats Paper");
+        } else if (
+          playerSelection === "Paper" &&
+          computerSelection === "Paper"
+        ) {
+          console.log("That's a tie!");
+        } else if (
+          playerSelection === "Scissors" &&
+          computerSelection === "Rock"
+        ) {
+          console.log("You Lose! Rock beats Scissors");
+        } else if (
+          playerSelection === "Scissors" &&
+          computerSelection === "Paper"
+        ) {
+          console.log("You Win! Scissors beats Paper");
+        } else if (
+          playerSelection === "Scissors" &&
+          computerSelection === "Scissors"
+        ) {
+          console.log("That's a tie!");
+        }
+        return computerSelection;
+      }
+      const playerSelection = "Rock";
+      const computerSelection = getComputerChoice();
+      console.log(playRound(playerSelection, computerSelection));
     </script>
   </body>
 </html>
