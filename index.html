@@ -10,53 +10,48 @@
     <script>
       function getComputerChoice() {
         let options = ["Rock", "Paper", "Scissors"];
-
         optionToUse = options[Math.floor(Math.random() * options.length)];
         return optionToUse;
       }
 
       function playRound(playerSelection, computerSelection) {
-        if (playerSelection === "Rock" && computerSelection === "Paper") {
-          console.log("You Lose! Paper beats Rock");
+        if (playerSelection == "Rock" && computerSelection === "Paper") {
+          return "You lose! Paper beats Rock";
         } else if (
-          playerSelection === "Rock" &&
+          playerSelection == "Rock" &&
           computerSelection === "Scissors"
         ) {
-          console.log("You Win! Rock beats Scissors");
-        } else if (playerSelection === "Rock" && computerSelection === "Rock") {
-          console.log("That's a tie!");
+          return "You win! Rock beats Scissors";
+        } else if (playerSelection == "Rock" && computerSelection === "Rock") {
+          return "It's a tie!";
+        } else if (playerSelection == "Paper" && computerSelection === "Rock") {
+          return "You win! Paper beats Rock";
         } else if (
-          playerSelection === "Paper" &&
-          computerSelection === "Rock"
-        ) {
-          console.log("You Win! Paper beats Rock");
-        } else if (
-          playerSelection === "Paper" &&
+          playerSelection == "Paper" &&
           computerSelection === "Scissors"
         ) {
-          console.log("You Lose! Scissors beats Paper");
+          return "You lose! Scissors beats Paper";
         } else if (
-          playerSelection === "Paper" &&
+          playerSelection == "Paper" &&
           computerSelection === "Paper"
         ) {
-          console.log("That's a tie!");
+          return "It's a tie!";
         } else if (
-          playerSelection === "Scissors" &&
+          playerSelection == "Scissors" &&
           computerSelection === "Rock"
         ) {
-          console.log("You Lose! Rock beats Scissors");
+          return "You lose! Rock beats Scissors";
         } else if (
-          playerSelection === "Scissors" &&
+          playerSelection == "Scissors" &&
           computerSelection === "Paper"
         ) {
-          console.log("You Win! Scissors beats Paper");
+          return "You win! Scissors beats Paper";
         } else if (
-          playerSelection === "Scissors" &&
+          playerSelection == "Scissors" &&
           computerSelection === "Scissors"
         ) {
-          console.log("That's a tie!");
+          return "it's a tie!";
         }
-        return computerSelection;
       }
       const playerSelection = "Rock";
       const computerSelection = getComputerChoice();
