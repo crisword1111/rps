@@ -11,6 +11,9 @@
       let playerWin = "player wins!";
       let computerWin = "computer wins!";
       let noContest = "its a tie!";
+      let finalPlayer = "player wins the game! gg";
+      let finalComputer = "computer wins, better luck next time :(";
+      let finalTie = "It's a draw! Play again";
 
       function getComputerChoice() {
         let options = ["Rock", "Paper", "Scissors"];
@@ -19,13 +22,12 @@
       }
 
       function game() {
+        let input = prompt("enter your option: ").toLowerCase();
         for (let i = 0; i < 5; i++) {
-          if (i < 4) {
-          }
+          playRound();
         }
       }
       function playRound(playerSelection, computerSelection) {
-        playerSelection = playerSelection.toLowerCase();
         if (playerSelection === computerSelection) {
           return noContest;
         } else if (
@@ -42,6 +44,7 @@
           return computerWin;
         }
       }
+      game();
     </script>
   </body>
 </html>
