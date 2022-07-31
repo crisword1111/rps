@@ -15,42 +15,20 @@
       }
 
       function playRound(playerSelection, computerSelection) {
-        if (playerSelection == "Rock" && computerSelection === "Paper") {
-          return "You lose! Paper beats Rock";
-        } else if (
-          playerSelection == "Rock" &&
-          computerSelection === "Scissors"
-        ) {
-          return "You win! Rock beats Scissors";
-        } else if (playerSelection == "Rock" && computerSelection === "Rock") {
-          return "It's a tie!";
-        } else if (playerSelection == "Paper" && computerSelection === "Rock") {
-          return "You win! Paper beats Rock";
-        } else if (
-          playerSelection == "Paper" &&
-          computerSelection === "Scissors"
-        ) {
-          return "You lose! Scissors beats Paper";
-        } else if (
-          playerSelection == "Paper" &&
-          computerSelection === "Paper"
-        ) {
+        if (playerSelection === computerSelection) {
           return "It's a tie!";
         } else if (
-          playerSelection == "Scissors" &&
-          computerSelection === "Rock"
+          (playerSelection === "rock" && computerSelection === "scissors") ||
+          (playerSelection === "paper" && computerSelection === "rock") ||
+          (playerSelection === "scissors" && computerSelection === "paper")
         ) {
-          return "You lose! Rock beats Scissors";
+          return "player wins!";
         } else if (
-          playerSelection == "Scissors" &&
-          computerSelection === "Paper"
+          (playerSelection === "rock" && computerSelection === "paper") ||
+          (playerSelection === "paper" && computerSelection === "scissors") ||
+          (playerSelection === "scissors" && computerSelection === "rock")
         ) {
-          return "You win! Scissors beats Paper";
-        } else if (
-          playerSelection == "Scissors" &&
-          computerSelection === "Scissors"
-        ) {
-          return "it's a tie!";
+          return "computer wins";
         }
       }
       const playerSelection = "Rock";
