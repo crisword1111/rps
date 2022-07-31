@@ -11,6 +11,7 @@
       let playerWin = "player wins!";
       let computerWin = "computer wins!";
       let noContest = "its a tie!";
+
       function getComputerChoice() {
         let options = ["Rock", "Paper", "Scissors"];
         optionToUse = options[Math.floor(Math.random() * options.length)];
@@ -26,19 +27,19 @@
       function playRound(playerSelection, computerSelection) {
         playerSelection = playerSelection.toLowerCase();
         if (playerSelection === computerSelection) {
-          return "It's a tie!";
+          return noContest;
         } else if (
           (playerSelection === "rock" && computerSelection === "scissors") ||
           (playerSelection === "paper" && computerSelection === "rock") ||
           (playerSelection === "scissors" && computerSelection === "paper")
         ) {
-          return "player wins!";
+          return playerWin;
         } else if (
           (playerSelection === "rock" && computerSelection === "paper") ||
           (playerSelection === "paper" && computerSelection === "scissors") ||
           (playerSelection === "scissors" && computerSelection === "rock")
         ) {
-          return "computer wins";
+          return computerWin;
         }
       }
     </script>
